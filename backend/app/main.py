@@ -24,7 +24,7 @@ def _startup() -> None:
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000","https://build-mind-ai.vercel.app/dashboard"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
