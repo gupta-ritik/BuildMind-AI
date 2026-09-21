@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #f4f7f2;
+  --muted-ink: #89958e;
+  --canvas: #09100f;
+  --line: rgba(186, 213, 201, 0.13);
+  --lime: #c7f36b;
+  --cyan: #8de7d1;
+}
+
+* {
+  border-color: var(--line);
+}
+
+body {
+  background:
+    radial-gradient(circle at 78% -10%, rgba(141, 231, 209, 0.13), transparent 32rem),
+    radial-gradient(circle at 5% 18%, rgba(199, 243, 107, 0.08), transparent 26rem),
+    var(--canvas);
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #31413c;
+  border-radius: 4px;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.app-shell {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 42px 42px;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: rgba(8, 15, 14, 0.78);
+  border-right: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.brand-mark {
+  align-items: center;
+  background: var(--lime);
+  color: #0b120e;
+  display: flex;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 2.25rem;
+  justify-content: center;
+  letter-spacing: -0.08em;
+  width: 2.25rem;
+}
+
+.nav-link {
+  color: var(--muted-ink);
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.nav-link:hover {
+  background: rgba(141, 231, 209, 0.08);
+  color: var(--ink);
+  transform: translateX(2px);
+}
+
+.page-shell {
+  animation: rise-in 420ms ease-out both;
+  max-width: 1180px;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.surface {
+  background: linear-gradient(145deg, rgba(21, 34, 30, 0.92), rgba(12, 21, 19, 0.88));
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.16);
+}
+
+.button-primary {
+  background: var(--lime);
+  color: #0b120e;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.button-primary:hover {
+  box-shadow: 0 0 0 4px rgba(199, 243, 107, 0.12), 0 8px 24px rgba(199, 243, 107, 0.16);
+  transform: translateY(-1px);
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+  }
+}
